@@ -1,0 +1,6 @@
+tmp/
+
+non-dapp-bbs/contracts/bbs.go
+non-dapp-bbs/contracts/bbs.abi
+
+ethereum/js/node_modules

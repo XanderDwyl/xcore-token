@@ -1,0 +1,43 @@
+{{define "content"}}
+  
+  <h2>Comments</h2>
+
+  {{range $item:=.list}}
+    <li>
+        [<a href="/s3_json/{{$item.ID}}">JSON in S3</a>]
+        [<a href="/hash/{{$item.ID}}">Hash</a>]
+        [<a href="/data_in_block/{{$item.ID}}">Data in Blockchain</a>]
+      {{$item.Utime | unixToDatetime }}: 
+      title={{$item.Title}}, body=
+      {{$item.Body}}
+      
+    </li>
+  {{else}}
+    <li>
+    not yet
+    </li>
+  {{end}}
+
+  <h2>Data from Eth</h2>
+  {{.dataFromEth}}
+
+  <hr />
+  <h2>add comments</h2>
+  <form action="/add_comment" method="post" >
+
+    {{if .csrf_token}}
+      <input type="hidden" name="csrf_token" value="{{.csrf_token}}" />
+    {{end}}
+
+    Title: 
+    <br />
+    <input type="text" name="title" value="" />
+    <br />
+    Body: 
+    <br />
+    <input type="text" name="body" value="" />
+    <br />
+    <input type="submit" name="submit" value="add comment" onclick="post()"/>
+  </form>
+    
+{{end}}

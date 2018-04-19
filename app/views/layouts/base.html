@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="format-detection" content="telephone=no">
+
+    <title>{{.page_title}}</title>
+
+  </head>
+
+  <body id="coinsnav-themes">
+    {{template "partials_flash" .}}
+    <header class="base">
+      {{template "partials_header" .}}
+    </header>
+
+
+    {{template "content" .}}
+
+    <footer class="page-footer teal accent-4">
+      {{template "partials_footer" .}}
+    </footer>
+
+    <script>
+      CONTRACT_ADDRESS = 'REPLACE_WITH_CONTRACT_ADDRESS';
+      ABI_DEFINITION = JSON.parse('REPLACE_WITH_ABI_DEFINITION');
+    </script>
+    <script src="https://cdn.rawgit.com/ethereum/web3.js/35ae85a5d30500f7df20c47594d529af872ac88a/dist/web3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha512/0.7.1/sha512.min.js"></script>
+    <script type="text/javascript" src="/assets/js/index.js"></script>
+  </body>
+</html>
